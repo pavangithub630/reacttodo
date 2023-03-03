@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+
+todo-display-item-div{
+
+  border: #61dafb;
+  border-radius: 5px;
+}
+todoItem-border{
+  padding: 20px;
+}
+.todo-display-inner-div{
+  height: 50px;
+  background-color: red;
+
+  border-radius: 0px;
+
+}
+.todo-display-item-div-child1{
+  background-color: #61dafb;
+  width: 10px;
+  flex-grow: 1;
+  height: 49px;
+
+  
+}

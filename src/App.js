@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import TodoDisplay from './components/TodoDisplay';
+import TodoInput from './components/TodoInput';
+import { useState } from 'react';
 
 function App() {
+  const [todoItems, setTodoItem] = useState([]);
+  const handleGetData=(data)=>{
+
+    setTodoItem(oldArray => [...oldArray, <TodoDisplay key={oldArray.length} todoItem={data}/>]);
+    console.log(todoItems.length);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+
+      <div className='center-container'>
+        <TodoInput onGetData={handleGetData} />
+      </div>
+      <div >
+      <h3 style={{marginLeft:30}}>Todo List</h3>
+        {todoItems}
+      </div>
     </div>
   );
 }
